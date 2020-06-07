@@ -1,4 +1,4 @@
-# GoCrypto
+# secureconn
 
 This is a *basic* https-like implementation using [box](https://godoc.org/golang.org/x/crypto/nacl/box).
 
@@ -6,12 +6,21 @@ Basic meaning that we have a concept of a client and server that have a secure s
 trade public keys and begin a session. This utilizes public key encryption in that the sender uses the receiver's public key to encrypt the message. The receiver
 decrpyts the message with their corresponding private key.
 
-To use this, we will use the prebuilt ```play-crypto``` binary.
+To use this:
+
+```#!sh
+$ git clone https://github.com/prologic/secureconn
+$ go build
+```
 
 First, start the server:
 
-```./play-crypto -s [-p <port>]```
+```#!sh
+$ ./secureconn -s [-p <port>]
+```
 
 Next, connect as a client:
 
-```./play-crypto [-p <port>]```
+```#!sh
+$ ./secureconn [-p <port>]
+```
