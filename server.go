@@ -11,7 +11,7 @@ type Server struct {
 }
 
 func (s *Server) Run() {
-	address := fmt.Sprintf("127.0.0.1:%d", s.port)
+	address := fmt.Sprintf(":%d", s.port)
 	networkAddress, _ := net.ResolveTCPAddr("tcp", address)
 
 	listener, err := net.ListenTCP("tcp", networkAddress)
